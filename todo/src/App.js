@@ -4,6 +4,7 @@ import TodoList from './components/TodoList';
 
 const todos = [{
   task: "",
+  note: "",
   complete: false,
   id: ""
 }]
