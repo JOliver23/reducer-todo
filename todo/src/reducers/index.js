@@ -1,7 +1,8 @@
 export const initialState = {
     task: "Sample Task from reducer",
     note: "we have a todo",
-    complete: false
+    complete: false,
+    id: ""
 };
 
 export const taskReducer = (state, action) => {
