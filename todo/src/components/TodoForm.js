@@ -17,8 +17,8 @@ const TodoForm = () => {
                     type="text"
                     name="todo"
                     placeholder="New Todo Task..."
-                    value={newTodo}
-                    handleChang={handleChanges}
+                    value={newTodo.task}
+                    handleChange={handleChanges}
                 />
             </label>
             <button onClick={() => {
