@@ -18,8 +18,9 @@ const TodoForm = () => {
                     name="todo"
                     placeholder="New Todo Task..."
                     value={newTodo.task}
-                    handleChange={handleChanges}
+                    onChange={handleChanges}
                 />
+                
             </label>
             <button onClick={() => {
                 dispatch({type: "ADD_TASK", payload: newTodo})

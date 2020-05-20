@@ -8,7 +8,6 @@ const Todo = () => {
             dispatch({ type: "TOGGLE_COMPLETE"})
         }} className="todo-task">
             <p>{newTodoState.task}</p>
-            <p>{newTodoState.note}</p>
         </div>
     );
 };
