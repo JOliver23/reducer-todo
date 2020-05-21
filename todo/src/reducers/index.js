@@ -1,14 +1,16 @@
 export const initialState = {
-    task: "Sample Task from reducer",
-    complete: false,
-    id: ""
+    todos: [{
+        task: "Sample Task from reducer",
+        complete: false,
+        id: ""
+    }]
 };
 
 export const taskReducer = (state, action) => {
     if (action.type === "ADD_TASK") {
         return {
             ...state,
-            task: action.payload 
+            task: action.payload ? action.payload : state.task
         };
     } else if (action.type === "TOGGLE_COMPLETE") {
         return {
