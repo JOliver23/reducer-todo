@@ -1,5 +1,5 @@
 import React, { useState, useReducer} from 'react';
-import {initialState, taskReducer} from '../reducers';
+import {initialState, taskReducer} from './reducers/index';
 import TodoList from './components/TodoList';
 
 function App() {
@@ -18,12 +18,12 @@ function App() {
   return (
     <div className="App">
       <h1>Lambda's Todo List</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" name="task" placeholder="New Todo Task..." value={newTask} onChange={handleChanges} />      
-        <button onClick={() => dispatch({type: "ADD_TASK"})}>Add Todo</button>
-        <button>Clear Complete</button>
+        <button onClick={() => dispatch({type: "ADD_TASK", payload: newTask})} type='submit'>Add Todo</button>
+        <button onClick={() => dispatch({type: "CLEAR_COMPLETE", payload: newTask})}>Clear Complete</button>
       </form>
-      <TodoList />
+      <TodoList task={task} dispatch={dispatch}/>
     </div>
   );
 }
