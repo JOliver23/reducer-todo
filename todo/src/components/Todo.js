@@ -1,8 +1,8 @@
-import React, {useReducer} from 'react';
+import React from 'react';
 
 const Todo = (props) => {
     return (
-        <div id={props.task.id} dispatch={props.task.dispatch} className="todo-task">
+        <div id={props.task.id} className="todo-task" dispatch={"TOGGLE_COMPLETE"}>
            <p>{props.task.task}</p>
         </div>
     );
