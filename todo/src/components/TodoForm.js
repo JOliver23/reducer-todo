@@ -15,9 +15,9 @@ const TodoForm = () => {
             <label htmlFor="new-todo">
                 <input
                     type="text"
-                    name="todo"
+                    name="new-todo"
                     placeholder="New Todo Task..."
-                    value={newTodo.task}
+                    value={newTodo}
                     onChange={handleChanges}
                 />
                 
