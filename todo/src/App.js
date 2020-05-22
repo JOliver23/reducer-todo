@@ -5,7 +5,6 @@ import TodoList from './components/TodoList';
 function App() {
   const [task, dispatch] = useReducer(taskReducer, initialState);
   const [newTask, setNewTask] = useState("");
-
   const handleChanges = e => {
     setNewTask(e.target.value)
   };
@@ -14,7 +13,7 @@ function App() {
     e.preventDefault();
     setNewTask("")
   };
-
+  console.log(task)
   return (
     <div className="App">
       <h1>Lambda's Todo List</h1>

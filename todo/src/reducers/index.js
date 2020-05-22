@@ -1,25 +1,42 @@
-export const initialState = [{
-    task: "practice reducer",
-    complete: false,
-    id:666
-}];
+export const initialState = [
+    {
+        task: "practice reducer",
+        complete: false,
+        id:666
+    }
+];
 
 export const taskReducer = (state, action) => {
-    console.log("state: ", state.todos);
-    console.log("action.payload: ", action.payload);
+    // console.log("state: ", state.todos);
+    // console.log("action.payload: ", action.payload);
     switch (action.type) {
         case 'ADD_TASK':
+            console.log(action);
             return [
                 ...state,
                 {
                     task: action.payload,
                     complete: false,
-                    id: new Date()
+                    id: Date.now()
                 }
             ];
+
         case 'TOGGLE_COMPLETE':
-            return state.map(newTask =>
-                newTask.id === action.payload.id ? {...newTask, complete: !newTask.complete} : newTask);
+            console.log(action)
+            return state.map(todo => {
+                if (todo.id === action.payload){
+                    return {
+                        ...todo,
+                        complete: !todo.complete
+                    }
+                } else {
+                    return todo
+                }
+            })
+                // state.map(newTask =>
+                // newTask.id === action.payload.id ? {...newTask, complete: !newTask.complete} : newTask);
+                
+                // 
         case 'CLEAR_COMPLETE':
             return state.filter(task =>
                 !task.complete);
